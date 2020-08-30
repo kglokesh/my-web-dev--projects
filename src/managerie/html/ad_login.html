@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            position: relative;
+        }
+        .form-box-outline { 
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(144, 17, 202);
+            clip-path: polygon(0 0, 100% 77%, 100% 100%, 0% 100%);
+        }
+        .form-box-position{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-45%);
+        }
+        .form-box {  
+            position: relative;          
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.18);
+            height: 450px;
+            width: 300px;
+            padding: 20px 18px;
+            padding-top: 70px;
+        }
+        .user-login-img {
+            width: 80px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translate(-50px,-.3%);
+            background-color: #ffffff;
+        }
+        .form-box__label {
+            margin: 15px 0px;
+            font-size: 18px;
+        }
+        .mt-0{
+            margin-top: 30px;
+        }
+        .form-box__input {
+            margin: 10px 0px;
+            font-size: 15px;
+            padding: 12px 20px;
+            border:2px solid rgb(144, 17, 202);
+            border-radius: 8px;
+            outline: none;
+        }
+        .btn-box {
+            margin-top: 20px;
+            height: 45px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(144, 17, 202);
+            border: 2px solid rgb(144, 17, 202);
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .btn-box__btn-submit{
+            flex: 1;
+            height: 100%;
+            font-size: 16px;
+            border: none;
+            color: white;
+            background-color: rgb(144, 17, 202);
+            cursor: pointer;
+        }
+        i{
+            display: block;
+            font-size: 40px;
+            color: rgb(144, 17, 202);
+            background-color: white;
+            opacity: 1;
+            transition: .2s ease-in-out;
+        }
+    </style>
+
+</head>
+<body>
+    <form method="post" action="../php/ad_loginback.php">
+        <div class="form-box-outline"></div>
+        <div class="form-box-position">
+            <div class="form-box">
+                <img src="../images/user-circle-regular.svg" alt="" class="user-login-img">
+                <h1 align="center">Admin Login</h1>
+                <label for="" class="form-box__label mt-0">Username</label>
+                <input type="text" name="username"  placeholder="Username.." class="form-box__input" required>
+                <label for="" class="form-box__label">Password</label>
+                <input type="password" name="password" placeholder="Password" class="form-box__input" required>
+                <div class="btn-box">
+                    <button type="submit" value="submit" class="btn-box__btn-submit">Submit
+                    </button>
+                    <i>&rarr;</i>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
